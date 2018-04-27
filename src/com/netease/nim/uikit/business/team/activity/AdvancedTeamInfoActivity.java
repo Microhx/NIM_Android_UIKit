@@ -359,7 +359,7 @@ public class AdvancedTeamInfoActivity extends UI implements
         option.cropOutputImageWidth = 720;
         option.cropOutputImageHeight = 720;
 
-        PickImageHelper.pickImage(AdvancedTeamInfoActivity.this, requestCode, option);
+        PickImageHelper.pickImage(AdvancedTeamInfoActivity.this, requestCode, option,false);
     }
 
     /**

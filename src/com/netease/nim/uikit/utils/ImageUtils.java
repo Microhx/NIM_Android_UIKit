@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 
 import com.netease.nim.uikit.R;
+import com.netease.nim.uikit.support.glide.CustomGlideImageEngine;
 import com.netease.nim.uikit.support.matisse.GifSizeFilter;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
-import com.zhihu.matisse.engine.impl.GlideEngine;
 import com.zhihu.matisse.filter.Filter;
 
 /**
@@ -25,7 +25,7 @@ public class ImageUtils {
                 .gridExpectedSize(activity.getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
-                .imageEngine(new GlideEngine())
+                .imageEngine(new CustomGlideImageEngine())
                 .forResult(requestCode);
     }
 }

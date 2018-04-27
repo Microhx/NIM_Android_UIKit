@@ -94,7 +94,7 @@ public abstract class PickImageAction extends BaseAction {
                 onPreviewImageActivityResult(requestCode, data);
                 break;
 
-            case RequestCode.GET_LOCAL_IMAGE:
+            case RequestCode.GET_LOCAL_GALLERY:
                 dealWidthLocalGallery(resultCode,data);
                 break;
         }

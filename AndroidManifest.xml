@@ -146,7 +146,7 @@
 
         <provider
             android:name="com.netease.nim.uikit.common.media.picker.model.GenericFileProvider"
-            android:authorities="${applicationId}.generic.file.provider"
+            android:authorities="com.netease.nim.uikitgeneric.file.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
