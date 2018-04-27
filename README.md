@@ -5,4 +5,6 @@
 ### android.os.TransactionTooLargeException
 
 更换了原始的图片选择方案，使用了[知乎图片选择容器](https://github.com/zhihu/Matisse),直接避免了以上的bug
-![](.images/01.png) ![](.images/02.png) ![](.images/03.png)
+<img src=".images/01.png" style="width:30%"/> 
+<img src=".images/02.png" style="width:30%"/> 
+<img src=".images/03.png" style="width:30%"/>
