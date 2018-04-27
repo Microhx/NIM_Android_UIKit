@@ -16,6 +16,10 @@ import com.netease.nim.uikit.common.util.media.ImageUtil;
 import com.netease.nim.uikit.common.util.storage.StorageType;
 import com.netease.nim.uikit.common.util.storage.StorageUtil;
 import com.netease.nim.uikit.common.util.string.StringUtil;
+import com.netease.nimlib.sdk.chatroom.ChatRoomMessageBuilder;
+import com.netease.nimlib.sdk.msg.MessageBuilder;
+import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
+import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 import java.io.File;
 
@@ -33,7 +37,15 @@ public abstract class PickImageAction extends BaseAction {
     private boolean multiSelect;
     private boolean crop = false;
 
-    protected abstract void onPicked(File file);
+    protected void onPicked(File file) {
+        IMMessage message;
+        if (getContainer() != null && getContainer().sessionType == SessionTypeEnum.ChatRoom) {
+            message = ChatRoomMessageBuilder.createChatRoomImageMessage(getAccount(), file, file.getName());
+        } else {
+            message = MessageBuilder.createImageMessage(getAccount(), getSessionType(), file, file.getName());
+        }
+        sendMessage(message);
+    }
 
     protected PickImageAction(int iconResId, int titleId, boolean multiSelect) {
         super(iconResId, titleId);
@@ -51,6 +63,11 @@ public abstract class PickImageAction extends BaseAction {
         return StorageUtil.getWritePath(filename, StorageType.TYPE_TEMP);
     }
 
+
+    protected boolean isFromCamera() {
+        return true;
+    }
+
     /**
      * 打开图片选择器
      */
@@ -64,7 +81,7 @@ public abstract class PickImageAction extends BaseAction {
         option.cropOutputImageHeight = PORTRAIT_IMAGE_WIDTH;
         option.outputPath = outPath;
 
-        PickImageHelper.pickImage(getActivity(), requestCode, option);
+        PickImageHelper.pickImage(getActivity(), requestCode, option, isFromCamera());
     }
 
     @Override
@@ -76,8 +93,14 @@ public abstract class PickImageAction extends BaseAction {
             case RequestCode.PREVIEW_IMAGE_FROM_CAMERA:
                 onPreviewImageActivityResult(requestCode, data);
                 break;
+
+            case RequestCode.GET_LOCAL_IMAGE:
+                dealWidthLocalGallery(resultCode,data);
+                break;
         }
     }
+
+    protected void dealWidthLocalGallery(int resultCode , Intent data){}
 
     /**
      * 图片选取回调
@@ -149,7 +172,7 @@ public abstract class PickImageAction extends BaseAction {
     /**
      * 发送图片
      */
-    private void sendImageAfterSelfImagePicker(final Intent data) {
+    protected void sendImageAfterSelfImagePicker(final Intent data) {
         SendImageHelper.sendImageAfterSelfImagePicker(getActivity(), data, new SendImageHelper.Callback() {
 
             @Override

@@ -224,5 +224,7 @@
     <string name="fts_prefix_hit">前缀匹配高亮检索结果</string>
     <string name="msg_search">全文检索</string>
     <string name="msg_search_limit">全文检索显示条数</string>
+    <string name="input_panel_camera">拍照</string>
+    <string name="error_gif">gif图片太小</string>
 
 </resources>

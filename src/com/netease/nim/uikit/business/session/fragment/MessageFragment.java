@@ -14,6 +14,8 @@ import com.netease.nim.uikit.api.model.main.CustomPushContentProvider;
 import com.netease.nim.uikit.api.model.session.SessionCustomization;
 import com.netease.nim.uikit.business.ait.AitManager;
 import com.netease.nim.uikit.business.session.actions.BaseAction;
+import com.netease.nim.uikit.business.session.actions.CameraAction;
+import com.netease.nim.uikit.business.session.actions.FixImageAction;
 import com.netease.nim.uikit.business.session.actions.ImageAction;
 import com.netease.nim.uikit.business.session.actions.LocationAction;
 import com.netease.nim.uikit.business.session.actions.VideoAction;
@@ -375,7 +377,10 @@ public class MessageFragment extends TFragment implements ModuleProxy {
     // 操作面板集合
     protected List<BaseAction> getActionList() {
         List<BaseAction> actions = new ArrayList<>();
-        actions.add(new ImageAction());
+        //actions.add(new ImageAction());
+        actions.add(new CameraAction());
+        actions.add(new FixImageAction());
+
         actions.add(new VideoAction());
         actions.add(new LocationAction());
 

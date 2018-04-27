@@ -92,4 +92,5 @@
     <dimen name="robot_message_text_max_width">200dp</dimen>
     <dimen name="robot_message_image_width">200dp</dimen>
     <dimen name="robot_message_link_width">200dp</dimen>
+    <dimen name="grid_expected_size">120dp</dimen>
 </resources>

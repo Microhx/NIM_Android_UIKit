@@ -9,4 +9,7 @@ public class RequestCode {
     public final static int PREVIEW_IMAGE_FROM_CAMERA = 6;
     public final static int GET_LOCAL_IMAGE = 7;// 相册
     public final static int SEND_ACK_MESSAGE = 8; // 发送需要已读回执的消息
+
+
+    public static final int GET_LOCAL_GALLERY = 8;  //使用知乎获取图片信息
 }
