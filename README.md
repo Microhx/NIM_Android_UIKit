@@ -8,6 +8,4 @@
 
 |分离图片|选择图片|发送图片
 |-|-|-|
-| <img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/01.png" />  |  
-  <img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/02.png"/> |  
-  <img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/03.png" />|
+|<img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/01.png" />|<img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/02.png"/>|<img src="https://raw.githubusercontent.com/Microhx/NIM_Android_UIKit/master/images/03.png" />|
