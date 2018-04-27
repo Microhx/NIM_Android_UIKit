@@ -17,6 +17,7 @@ import java.util.Set;
 
 public class TAdapter<T> extends BaseAdapter implements IViewReclaimer {
 
+
     protected final Context context;
 
     private final List<T> items;
