@@ -191,8 +191,7 @@ public class ContactsFragment extends TFragment {
     private final class ContactItemClickListener implements OnItemClickListener, OnItemLongClickListener {
 
         @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position,
-                                long id) {
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             AbsContactItem item = (AbsContactItem) adapter.getItem(position);
             if (item == null) {
                 return;

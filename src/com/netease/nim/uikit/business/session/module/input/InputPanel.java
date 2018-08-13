@@ -286,6 +286,8 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
      * 发送“正在输入”通知
      */
     private void sendTypingCommand() {
+        if(null == container || TextUtils.isEmpty(container.account)) return;
+
         if (container.account.equals(NimUIKit.getAccount())) {
             return;
         }
