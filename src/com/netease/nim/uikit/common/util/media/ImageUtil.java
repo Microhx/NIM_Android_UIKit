@@ -192,7 +192,13 @@ public class ImageUtil {
             if (rotate == 0 && inSampleSize == 1) {
                 dstBitmap = srcBitmap;
             } else {
-                dstBitmap = Bitmap.createBitmap(srcBitmap, 0, 0, size.width, size.height, matrix, true);
+                dstBitmap = Bitmap.createBitmap(srcBitmap,
+                        0,
+                        0,
+                        Math.min(size.width, srcBitmap.getWidth()),
+                        Math.min(size.height, srcBitmap.getHeight()),
+                        matrix,
+                        true);
             }
 
             bos = new BufferedOutputStream(new FileOutputStream(dstFile));
